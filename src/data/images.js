@@ -7,11 +7,13 @@ import mlbBadge from '../assets/photo-mlb.png'
 import heroMiamiBeach from '../assets/photo-hero-miami.png'
 import commitment from '../assets/photo-commitment.png'
 import think from '../assets/photo-think.png'
+import chicagoExplore from '../assets/photo-chicago-explore.png'
 
 export const images = {
   heroMiamiBeach,
   hotDogTray,
   chicagoSkyline,
+  chicagoExplore,
   guitarsWall,
   storefront,
   mlbBadge,

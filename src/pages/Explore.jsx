@@ -1,5 +1,6 @@
 import { images } from '../data/images'
 import TeamScoreWidget from '../components/TeamScoreWidget'
+import ChicagoHotspots from '../components/ChicagoHotspots'
 
 const TEAMS = [
   { id: 112, name: 'Cubs', city: 'Chicago', emoji: '🐻', accent: '#0e3386' },
@@ -37,6 +38,18 @@ export default function Explore() {
           {TEAMS.map((team) => (
             <TeamScoreWidget key={team.id} team={team} />
           ))}
+        </div>
+      </section>
+
+      <section className="bg-black/5 py-12">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="font-display text-tommy-red text-4xl tracking-wide drop-shadow-[2px_2px_0_rgba(0,0,0,0.2)]">
+            Explore Chicago
+          </h2>
+          <p className="font-body text-black/70 text-lg mt-3 mb-8">
+            Tap a marker to dig into the city that started it all.
+          </p>
+          <ChicagoHotspots />
         </div>
       </section>
     </div>
