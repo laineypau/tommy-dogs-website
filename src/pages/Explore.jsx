@@ -12,7 +12,7 @@ export default function Explore() {
     <div>
       <section
         className="relative bg-cover bg-center min-h-[40vh] flex items-center justify-center text-center"
-        style={{ backgroundImage: `url(${images.chicagoSkyline})` }}
+        style={{ backgroundImage: `url(${images.exploreHero})` }}
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 px-4">
