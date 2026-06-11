@@ -27,11 +27,10 @@ export default function Explore() {
           Two Cities, One Stand
         </h2>
         <p className="font-body text-black/80 text-lg mt-3 leading-relaxed">
-          At Tommy Dogs we're mixing the vibes of Chicago and Miami culture — the
-          deep-dish grit of the Windy City meets the sunshine and salsa of South
-          Beach. It shows up in our dogs, our music, and yeah, the teams we root
-          for. So whether you bleed Cubbie blue or you're all about that Marlins
-          teal, pull up a stool and catch the scores with us.
+          At Tommy Dogs we're mixing Chicago vibes with the rich Miami culture!
+          It shows up in our dogs, our music, and yeah, the teams we root for. So
+          whether you bleed Cubbie blue or you're all about that Marlins teal,
+          pull up a stool and catch the scores with us.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 max-w-2xl mx-auto">
