@@ -20,42 +20,56 @@ export default function TeamScoreWidget({ team }) {
 
   useEffect(() => {
     const controller = new AbortController()
-    const now = new Date()
-    const start = new Date(now)
-    start.setDate(start.getDate() - 8)
-    const end = new Date(now)
-    end.setDate(end.getDate() + 14)
-    const url =
-      `https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=${id}` +
-      `&startDate=${isoDate(start)}&endDate=${isoDate(end)}`
 
-    fetch(url, { signal: controller.signal })
-      .then((res) => res.json())
-      .then((data) => {
-        const games = (data.dates || [])
-          .flatMap((d) => d.games)
-          .sort((a, b) => new Date(a.gameDate) - new Date(b.gameDate))
+    const load = () => {
+      const now = new Date()
+      const start = new Date(now)
+      start.setDate(start.getDate() - 8)
+      const end = new Date(now)
+      end.setDate(end.getDate() + 14)
+      const url =
+        `https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=${id}` +
+        `&startDate=${isoDate(start)}&endDate=${isoDate(end)}`
 
-        const live = games.find((g) => g.status.abstractGameState === 'Live')
-        const finals = games.filter((g) => g.status.abstractGameState === 'Final')
-        const lastFinal = finals[finals.length - 1]
-        const next = games.find(
-          (g) =>
-            g.status.abstractGameState === 'Preview' &&
-            new Date(g.gameDate).getTime() > Date.now(),
-        )
+      fetch(url, { signal: controller.signal })
+        .then((res) => res.json())
+        .then((data) => {
+          const games = (data.dates || [])
+            .flatMap((d) => d.games)
+            .sort((a, b) => new Date(a.gameDate) - new Date(b.gameDate))
 
-        const current = live || lastFinal
-        setState({
-          status: 'ready',
-          current: current ? describe(current, id) : null,
-          next: next ? describeNext(next, id) : null,
+          const live = games.find((g) => g.status.abstractGameState === 'Live')
+          const finals = games.filter((g) => g.status.abstractGameState === 'Final')
+          const lastFinal = finals[finals.length - 1]
+          const next = games.find(
+            (g) =>
+              g.status.abstractGameState === 'Preview' &&
+              new Date(g.gameDate).getTime() > Date.now(),
+          )
+
+          const current = live || lastFinal
+          setState({
+            status: 'ready',
+            current: current ? describe(current, id) : null,
+            next: next ? describeNext(next, id) : null,
+          })
         })
-      })
-      .catch((err) => {
-        if (err.name !== 'AbortError') setState({ status: 'error' })
-      })
-    return () => controller.abort()
+        .catch((err) => {
+          // Keep the last good data on a transient refresh failure; only
+          // surface an error if we never loaded anything.
+          if (err.name !== 'AbortError') {
+            setState((prev) => (prev.status === 'ready' ? prev : { status: 'error' }))
+          }
+        })
+    }
+
+    load()
+    // Refresh every 30s so live scores stay current while the page is open.
+    const interval = setInterval(load, 30000)
+    return () => {
+      clearInterval(interval)
+      controller.abort()
+    }
   }, [id])
 
   return (
