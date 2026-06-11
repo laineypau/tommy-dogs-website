@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=B612:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-tommy-red: #cc0000;
+  --color-tommy-red-dark: #990000;
+  --color-sky-blue: #38b6ff;
+  --color-mustard: #ffde59;
+  --font-display: 'Bangers', cursive;
+  --font-body: 'B612', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+/* Dotted price leader */
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.price-row .leader {
+  flex: 1;
+  border-bottom: 2px dotted #cc0000;
+  margin-bottom: 0.35em;
+}
+
+/* Starburst badge */
+.starburst {
+  clip-path: polygon(
+    50% 0%, 61% 12%, 75% 5%, 78% 20%, 93% 18%, 90% 33%,
+    100% 43%, 88% 52%, 95% 66%, 80% 68%, 78% 84%, 64% 78%,
+    50% 90%, 36% 78%, 22% 84%, 20% 68%, 5% 66%, 12% 52%,
+    0% 43%, 10% 33%, 7% 18%, 22% 20%, 25% 5%, 39% 12%
+  );
+}
