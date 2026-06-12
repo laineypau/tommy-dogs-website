@@ -50,22 +50,22 @@ export default function WeatherWidget() {
   const today = new Date().toLocaleDateString('en-US', { weekday: 'long' })
 
   return (
-    <div className="bg-sky-blue border-4 border-black rounded-2xl shadow-lg px-3 py-2 sm:px-4 sm:py-3 text-center text-black">
-      <p className="font-display text-xl sm:text-2xl tracking-wide leading-none">Miami</p>
-      <p className="font-body text-[10px] sm:text-xs uppercase tracking-wide text-black/70">{today}</p>
+    <div className="bg-sky-blue border-2 sm:border-4 border-black rounded-xl sm:rounded-2xl shadow-lg px-1.5 py-1 sm:px-4 sm:py-3 text-center text-black">
+      <p className="font-display text-sm sm:text-2xl tracking-wide leading-none">Miami</p>
+      <p className="font-body text-[8px] sm:text-xs uppercase tracking-wide text-black/70">{today}</p>
       {weather ? (
         <>
-          <p className="text-3xl sm:text-4xl mt-1 leading-none" aria-hidden="true">{weather.emoji}</p>
-          <p className="font-body font-bold text-3xl sm:text-4xl leading-none mt-1">{weather.temp}&deg;F</p>
-          <p className="font-body text-xs sm:text-sm font-bold mt-0.5">{weather.label}</p>
-          <p className="font-body text-[10px] sm:text-xs mt-1 text-black/70">
+          <p className="text-lg sm:text-4xl mt-1 leading-none" aria-hidden="true">{weather.emoji}</p>
+          <p className="font-body font-bold text-lg sm:text-4xl leading-none mt-1">{weather.temp}&deg;F</p>
+          <p className="font-body text-[9px] sm:text-sm font-bold mt-0.5">{weather.label}</p>
+          <p className="font-body text-[10px] sm:text-xs mt-1 text-black/70 hidden sm:block">
             H {weather.high}&deg; &middot; L {weather.low}&deg;
           </p>
         </>
       ) : (
         <p className="font-body text-sm py-4 text-black/70">Loading…</p>
       )}
-      <p className="font-display text-mustard text-sm sm:text-base leading-tight tracking-wide mt-2 pt-2 border-t border-black/20 drop-shadow-[1px_1px_0_rgba(0,0,0,0.6)]">
+      <p className="font-display text-mustard text-sm sm:text-base leading-tight tracking-wide mt-2 pt-2 border-t border-black/20 drop-shadow-[1px_1px_0_rgba(0,0,0,0.6)] hidden sm:block">
         It's a great day for Tommy Dogs!
       </p>
     </div>

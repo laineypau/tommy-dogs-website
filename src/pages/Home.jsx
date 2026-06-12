@@ -27,7 +27,7 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover object-bottom"
         />
         {/* Miami weather widget, upper-right */}
-        <div className="absolute top-24 right-3 sm:right-4 z-20 w-36 sm:w-52">
+        <div className="absolute top-24 right-3 sm:right-4 z-20 w-24 sm:w-52">
           <WeatherWidget />
         </div>
 
