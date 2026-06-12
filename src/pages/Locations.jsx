@@ -17,9 +17,8 @@ export default function Locations() {
     <div className="max-w-6xl mx-auto px-4 py-16">
       <h1 className="font-display text-tommy-red text-5xl text-center mb-2">Find Us in Miami</h1>
       <p className="text-center text-lg max-w-2xl mx-auto mb-8">
-        Tommy Dogs is a <span className="font-semibold">pop-up cart</span>, not a daily storefront. We
-        pop up <span className="font-semibold">Thursday, Friday, and Saturday</span>, rotating between
-        the three Miami spots below, so we're not at all of them every day.
+        Tommy Dogs is a pop-up cart! We're out slinging dogs on Thursday, Friday, and Saturday,
+        rotating between the three Miami spots below, so we're not at all of them every day.
       </p>
 
       {/* Instagram callout — where are we today */}

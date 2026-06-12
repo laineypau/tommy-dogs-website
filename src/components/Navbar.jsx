@@ -19,7 +19,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="bg-black sticky top-0 z-50">
+    <header className="bg-black/40 backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-20">
         <NavLink to="/" className="shrink-0" onClick={() => setOpen(false)}>
           <Logo className="h-14" />
@@ -43,7 +43,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav className="md:hidden bg-black border-t border-white/10 flex flex-col px-4 pb-4">
+        <nav className="md:hidden bg-black/40 backdrop-blur-md border-t border-white/10 flex flex-col px-4 pb-4">
           {links.map((link) => (
             <NavLink key={link.to} to={link.to} className={navLinkClasses} onClick={() => setOpen(false)}>
               {link.label}

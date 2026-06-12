@@ -8,16 +8,13 @@ export default function Menu() {
     <div>
       {/* Pop-culture / attitude banner */}
       <section
-        className="relative bg-cover bg-center text-center py-28 px-4"
+        className="relative bg-cover bg-center text-center -mt-20 pt-48 pb-56 px-4"
         style={{ backgroundImage: `url(${images.think})` }}
       >
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10">
           <p className="font-display text-white text-6xl md:text-8xl tracking-wide drop-shadow-[3px_3px_0_rgba(0,0,0,0.6)]">
             YOU BETTER THINK!
-          </p>
-          <p className="font-display text-mustard text-xl md:text-3xl tracking-wide mt-4 drop-shadow">
-            ...about what you're ordering!
           </p>
         </div>
       </section>

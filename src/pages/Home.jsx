@@ -20,21 +20,21 @@ export default function Home() {
   return (
     <div>
       {/* Hero: Miami Beach aerial; fills the viewport with the photo's bottom anchored */}
-      <section className="relative h-[calc(100svh-5rem)] min-h-[420px] overflow-hidden">
+      <section className="relative h-svh min-h-[420px] -mt-20 overflow-hidden">
         <img
           src={images.heroMiamiBeach}
           alt="Tommy Dogs Chicago Style Hot Dogs, the only authentic Chicago dog in Miami"
           className="absolute inset-0 w-full h-full object-cover object-bottom"
         />
         {/* Miami weather widget, upper-right */}
-        <div className="absolute top-4 right-4 z-20 w-44 sm:w-52">
+        <div className="absolute top-24 right-4 z-20 w-44 sm:w-52">
           <WeatherWidget />
         </div>
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 text-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 pt-20 -translate-y-12 text-center">
           <Logo className="h-64 md:h-96 drop-shadow-[3px_3px_0_rgba(0,0,0,0.5)]" />
           <p
-            className="font-display text-3xl md:text-5xl tracking-wide"
+            className="font-display text-3xl md:text-5xl tracking-wide -mt-1 md:-mt-3"
             style={{
               color: '#cc0000',
               WebkitTextStroke: '0.08em #000',
@@ -44,10 +44,7 @@ export default function Home() {
             Chicago Style Hot Dogs
           </p>
         </div>
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent pt-20 pb-8 px-4 text-center">
-          <p className="font-display text-mustard text-xl sm:text-2xl md:text-4xl tracking-wide drop-shadow">
-            The Only Authentic Chicago Dog in Miami!
-          </p>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent pt-20 pb-20 px-4 text-center">
           <div className="mt-3 md:mt-4">
             <CtaButton to="/menu">View Menu</CtaButton>
           </div>
