@@ -31,7 +31,7 @@ export default function Home() {
           <WeatherWidget />
         </div>
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 pt-20 -translate-y-12 text-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 pt-20 translate-y-16 sm:-translate-y-12 text-center">
           <Logo className="h-64 md:h-96 drop-shadow-[3px_3px_0_rgba(0,0,0,0.5)]" />
           <p
             className="font-display text-3xl md:text-5xl tracking-wide -mt-1 md:-mt-3"
