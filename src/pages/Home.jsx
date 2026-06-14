@@ -34,7 +34,7 @@ export default function Home() {
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 pt-20 -translate-y-8 sm:-translate-y-12 text-center">
           <Logo className="h-64 md:h-96 drop-shadow-[3px_3px_0_rgba(0,0,0,0.5)]" />
           <p
-            className="font-display text-3xl md:text-5xl tracking-wide -mt-1 md:-mt-3"
+            className="font-display tracking-wide mt-2 md:mt-3 whitespace-nowrap leading-none text-[calc((100vw_-_2rem)/9.8)] sm:text-[calc((100vw_-_2rem)/12)]"
             style={{
               color: '#cc0000',
               WebkitTextStroke: '0.08em #000',
