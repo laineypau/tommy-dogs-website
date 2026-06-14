@@ -105,21 +105,6 @@ export default function Explore() {
           ))}
         </div>
       </section>
-
-      <section className="bg-black/5 py-12">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="relative w-full overflow-hidden rounded-xl shadow-lg" style={{ paddingTop: '56.25%' }}>
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/BDp0VlNApu8"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
