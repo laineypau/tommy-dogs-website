@@ -9,6 +9,11 @@ import commitment from '../assets/photo-commitment.png'
 import think from '../assets/photo-think.png'
 import chicagoExplore from '../assets/photo-chicago-explore.png'
 import exploreHero from '../assets/photo-explore-hero.png'
+import tshirt1 from '../assets/photo-tshirt-1.jpeg'
+import tshirt3 from '../assets/photo-tshirt-3.jpeg'
+import tshirt4 from '../assets/photo-tshirt-4.jpeg'
+import tshirt5 from '../assets/photo-tshirt-5.jpeg'
+import tshirt6 from '../assets/photo-tshirt-6.jpeg'
 
 export const images = {
   heroMiamiBeach,
@@ -22,3 +27,5 @@ export const images = {
   commitment,
   think,
 }
+
+export const tshirtPhotos = [tshirt1, tshirt3, tshirt4, tshirt5, tshirt6]

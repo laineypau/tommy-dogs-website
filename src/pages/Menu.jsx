@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Starburst from '../components/Starburst'
 import { menuItems } from '../data/menu'
 import { images } from '../data/images'
+import { withSlashSevens } from '../components/SlashSeven'
 
 export default function Menu() {
   return (
@@ -31,7 +32,7 @@ export default function Menu() {
                 <div className="flex items-baseline gap-2">
                   <span className="font-display text-mustard text-2xl uppercase tracking-wide">{item.name}</span>
                   <span className="flex-1 border-b-[3px] border-dotted border-mustard mb-1.5" />
-                  <span className="font-display text-mustard text-2xl">${item.price}</span>
+                  <span className="font-display text-mustard text-2xl">${withSlashSevens(item.price)}</span>
                 </div>
                 {item.notes && (
                   <p className="font-display text-mustard/95 text-base uppercase tracking-wide pl-6 -mt-0.5">

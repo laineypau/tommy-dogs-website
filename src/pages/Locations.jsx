@@ -1,3 +1,5 @@
+import { withSlashSevens } from '../components/SlashSeven'
+
 const INSTAGRAM_URL = 'https://www.instagram.com/tommydogsmiami'
 
 const locations = [
@@ -56,7 +58,7 @@ export default function Locations() {
               <span className="font-display text-mustard text-sm uppercase tracking-wide bg-tommy-red rounded-full px-3 py-1 mb-2">
                 Pop-Up Spot
               </span>
-              <h3 className="font-display text-tommy-red text-2xl uppercase tracking-wide">{loc.street}</h3>
+              <h3 className="font-display text-tommy-red text-2xl uppercase tracking-wide">{withSlashSevens(loc.street)}</h3>
               <p className="text-black/70 flex-1">{loc.city}</p>
               <a
                 href={directionsHref(loc)}
