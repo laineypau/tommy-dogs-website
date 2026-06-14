@@ -12,7 +12,7 @@ export default function ShirtCarousel() {
   }, [])
 
   return (
-    <div className="relative aspect-[3/4] bg-tommy-red overflow-hidden">
+    <div className="relative aspect-[4/5] bg-tommy-red overflow-hidden">
       {tshirtPhotos.map((src, i) => (
         <img
           key={src}
